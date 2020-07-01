@@ -9,9 +9,20 @@ import SwiftUI
 
 @main
 struct SwiftUIModelExplorationApp: App {
+    
+    @StateObject var namedColorModel: AppNamedColorModel = AppNamedColorModel(namedColor: nil)
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView<AppNamedColorModel>()
+                .environmentObject(namedColorModel)
         }
+    }
+    
+}
+
+struct SwiftUIModelExplorationApp_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }

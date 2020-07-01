@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA6D0E1824ABF2490040066C /* NamedColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6D0E1724ABF2490040066C /* NamedColorView.swift */; };
+		BAD43CD124AC1D9F00269DE9 /* NamedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD43CD024AC1D9F00269DE9 /* NamedColor.swift */; };
+		BAD43CD324AC1EA400269DE9 /* NamedColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD43CD224AC1EA400269DE9 /* NamedColorModel.swift */; };
 		BAE34EB224ABF0F600990B1C /* SwiftUIModelExplorationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE34EB124ABF0F600990B1C /* SwiftUIModelExplorationApp.swift */; };
 		BAE34EB424ABF0F600990B1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE34EB324ABF0F600990B1C /* ContentView.swift */; };
 		BAE34EB624ABF0F700990B1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAE34EB524ABF0F700990B1C /* Assets.xcassets */; };
@@ -34,6 +37,9 @@
 
 /* Begin PBXFileReference section */
 		BA6D0E1424ABF1710040066C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BA6D0E1724ABF2490040066C /* NamedColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColorView.swift; sourceTree = "<group>"; };
+		BAD43CD024AC1D9F00269DE9 /* NamedColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColor.swift; sourceTree = "<group>"; };
+		BAD43CD224AC1EA400269DE9 /* NamedColorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamedColorModel.swift; sourceTree = "<group>"; };
 		BAE34EAE24ABF0F600990B1C /* SwiftUIModelExploration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIModelExploration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAE34EB124ABF0F600990B1C /* SwiftUIModelExplorationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIModelExplorationApp.swift; sourceTree = "<group>"; };
 		BAE34EB324ABF0F600990B1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA6D0E1524ABF2040040066C /* Pallete */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pallete;
+			sourceTree = "<group>";
+		};
+		BA6D0E1624ABF2320040066C /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				BAD43CD024AC1D9F00269DE9 /* NamedColor.swift */,
+				BA6D0E1724ABF2490040066C /* NamedColorView.swift */,
+				BAD43CD224AC1EA400269DE9 /* NamedColorModel.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
 		BAE34EA524ABF0F600990B1C = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +120,8 @@
 		BAE34EB024ABF0F600990B1C /* SwiftUIModelExploration */ = {
 			isa = PBXGroup;
 			children = (
+				BA6D0E1524ABF2040040066C /* Pallete */,
+				BA6D0E1624ABF2320040066C /* Color */,
 				BAE34EB124ABF0F600990B1C /* SwiftUIModelExplorationApp.swift */,
 				BAE34EB324ABF0F600990B1C /* ContentView.swift */,
 				BAE34EB524ABF0F700990B1C /* Assets.xcassets */,
@@ -261,8 +286,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA6D0E1824ABF2490040066C /* NamedColorView.swift in Sources */,
+				BAD43CD324AC1EA400269DE9 /* NamedColorModel.swift in Sources */,
 				BAE34EB424ABF0F600990B1C /* ContentView.swift in Sources */,
 				BAE34EB224ABF0F600990B1C /* SwiftUIModelExplorationApp.swift in Sources */,
+				BAD43CD124AC1D9F00269DE9 /* NamedColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

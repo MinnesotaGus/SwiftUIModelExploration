@@ -7,14 +7,33 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContentView<NamedColorViewModel: NamedColorModel>: View {
+    
+    @EnvironmentObject var namedColorModel: NamedColorViewModel
+    
     var body: some View {
-        Text("Hello, world!").padding()
+        VStack {
+            NamedColorView(model: namedColorModel)
+        }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        ContentView()
+        ContentPreviewView()
     }
+    
+    struct ContentPreviewView: View {
+        
+        @StateObject var model: PreviewNamedColorModel = PreviewNamedColorModel(namedColor: nil)
+        
+        var body: some View {
+            ContentView<PreviewNamedColorModel>()
+                .environmentObject(model)
+        }
+        
+    }
+    
 }
