@@ -13,12 +13,20 @@ struct NamedColorView<Model: NamedColorModel>: View {
     
     var body: some View {
         VStack(alignment: .center) {
-            TextField("Name", text: $model.name)
-                .border(Color.gray, width: /*@START_MENU_TOKEN@*/1/*@END_MENU_TOKEN@*/)
-            ColorPicker(selection: $model.color, label: {
-                EmptyView()
-            })
-            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            HStack(alignment: .bottom) {
+                VStack(alignment: .leading, spacing: 2) {
+                    if !model.name.isEmpty {
+                        Text("Color Name")
+                            .font(.caption)
+                    }
+                    TextField("Color Name", text: $model.name.animation())
+                        .overlay(RoundedRectangle(cornerRadius: 4).stroke(Color(UIColor.label)))
+                }
+                ColorPicker(selection: $model.color, label: {
+                    EmptyView()
+                })
+                Spacer()
+            }
         }
         .padding()
         .onDisappear {
@@ -44,7 +52,6 @@ struct ColorView_Previews: PreviewProvider {
         }
     }
     
-    
     private struct ColorTestView: View {
         
         @StateObject var namedColorModel: PreviewNamedColorModel = PreviewNamedColorModel(namedColor: nil)
@@ -55,25 +62,26 @@ struct ColorView_Previews: PreviewProvider {
         
     }
     
-}
-
-
-final class PreviewNamedColorModel: NamedColorModel {
+    //MARK: - Preview Model
     
-    @Published var name: String
-    
-    @Published var color: Color
-    
-    private let namedColor: NamedColor?
-    
-    init(namedColor: NamedColor?) {
-        self.namedColor = namedColor
-        self.name = namedColor?.name ?? "Name"
-        self.color = namedColor?.color ?? Color.orange
-    }
-    
-    func save() {
-        //Persist to disk
+    final class PreviewNamedColorModel: NamedColorModel {
+        
+        @Published var name: String
+        
+        @Published var color: Color
+        
+        private let namedColor: NamedColor?
+        
+        init(namedColor: NamedColor?) {
+            self.namedColor = namedColor
+            self.name = namedColor?.name ?? ""
+            self.color = namedColor?.color ?? Color.orange
+        }
+        
+        func save() {
+            //Persist to disk
+        }
+        
     }
     
 }

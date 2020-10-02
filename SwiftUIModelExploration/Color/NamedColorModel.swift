@@ -27,7 +27,7 @@ final class AppNamedColorModel: NamedColorModel {
     
     init(namedColor: NamedColor?) {
         self.namedColor = namedColor
-        self.name = namedColor?.name ?? "Name"
+        self.name = namedColor?.name ?? ""
         self.color = namedColor?.color ?? Color.orange
     }
     

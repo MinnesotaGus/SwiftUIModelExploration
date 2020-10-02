@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainView.swift
 //  SwiftUIModelExploration
 //
 //  Created by Jordan Gustafson on 6/30/20.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView<NamedColorViewModel: NamedColorModel>: View {
+struct MainView<NamedColorViewModel: NamedColorModel>: View {
     
     @EnvironmentObject var namedColorModel: NamedColorViewModel
     
@@ -19,18 +19,18 @@ struct ContentView<NamedColorViewModel: NamedColorModel>: View {
     
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ContentPreviewView()
+        Preview()
     }
     
-    struct ContentPreviewView: View {
+    struct Preview: View {
         
-        @StateObject var model: PreviewNamedColorModel = PreviewNamedColorModel(namedColor: nil)
+        @StateObject var model = ColorView_Previews.PreviewNamedColorModel(namedColor: nil)
         
         var body: some View {
-            ContentView<PreviewNamedColorModel>()
+            MainView<ColorView_Previews.PreviewNamedColorModel>()
                 .environmentObject(model)
         }
         
